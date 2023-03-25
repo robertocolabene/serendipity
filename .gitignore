@@ -29,6 +29,9 @@ typings/
 .env
 .env.test
 
+#dev
+coverage
+
 # php
 api/vendor
 
