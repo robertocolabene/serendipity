@@ -3,10 +3,10 @@ import { PageService } from './page.service';
 
 @Controller()
 export class PageController {
-  constructor(private readonly appService: PageService) {}
+  constructor(private readonly PageService: PageService) {}
 
   @Get()
   home(): object {
-    return this.appService.home();
+    return this.PageService.home();
   }
 }
