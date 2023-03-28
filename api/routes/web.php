@@ -13,7 +13,10 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    echo 'asd';
+$router->get('[/]', function () use ($router) {
     return $router->app->version();
+});
+
+$router->get('/test[/]', function () use ($router) {
+    return 'test';
 });
