@@ -32,7 +32,3 @@ typings/
 #dev
 coverage
 dist
-
-# php
-api/vendor
-
