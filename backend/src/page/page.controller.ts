@@ -13,7 +13,7 @@ export class PageController {
 
   @Get('test')
   test(@Req() req: FastifyRequest) {
-    return req.query;
+    return this.PageService.test();
   }
 
   @Get('pages/:id')
