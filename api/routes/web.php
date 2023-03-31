@@ -18,5 +18,5 @@ $router->get('[/]', function () use ($router) {
 });
 
 $router->get('/test[/]', function () use ($router) {
-    return json_encode(['test'=>'oko9','asd'=>'not']);
+    return json_encode(['test'=>'oko9ppppppp','asd'=>'not']);
 });

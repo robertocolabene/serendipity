@@ -4,7 +4,10 @@ class CommApi
 	constructor() {}
 
 	async get(endpoint) {
-		const res = await fetch(this.api + endpoint, { cache: 'force-cache' });
+		const res = await fetch(this.api + endpoint, { 
+			//cache: 'no-cache',
+			next: { revalidate: 10 }
+		});
 		if (!res.ok) {
 			throw new Error('Failed to fetch data');
 		}
