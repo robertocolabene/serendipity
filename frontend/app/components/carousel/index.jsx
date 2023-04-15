@@ -1,6 +1,6 @@
 export default function Carousel() {
     return (
-        <div>
+        <div className="text-3xl font-bold underline">
             Questo è un carosello
         </div>
     );
