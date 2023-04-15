@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 import CommApi from '../core/comm-api'
 import { Suspense } from 'react'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,10 +21,11 @@ export default async function Home() {
       <div className={styles.description}>
         <p>
           <Suspense fallback={<div>Loading...</div>}>
-          Get started by {seo.test} asdasd {seo.asd} editing&nbsp;
+          Get Sstarted by {seo.test} asdasd {seo.asd} editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>
           </Suspense>
         </p>
+        <Link href="/about">About</Link>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
