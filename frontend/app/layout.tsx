@@ -1,5 +1,5 @@
 import './globals.css'
-import { Banner, Carousel } from './components'
+import { Banner, Carousel, Header } from '../components'
 
 export const metadata = {
   title: 'Create Next App yeah',
@@ -12,8 +12,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="it">
-      <body>
+    <html lang="it">    
+      <body>  
+        <Header/> 
         <Banner/>
         <Carousel/>
         {children}
