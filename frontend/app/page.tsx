@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
-import CommApi from '../core/comm-api'
+import CommApi from '@/core/comm-api'
 import { Suspense } from 'react'
 import Link from 'next/link'
 

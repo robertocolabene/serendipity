@@ -1,5 +1,5 @@
 import './globals.css'
-import { Banner, Carousel, Header } from '../components'
+import { Banner, Carousel, Header } from '@/components'
 
 export const metadata = {
   title: 'Create Next App yeah',
