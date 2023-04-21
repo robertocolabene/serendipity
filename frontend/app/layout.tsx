@@ -1,5 +1,5 @@
+import { Header } from '@/components'
 import './globals.css'
-import { Banner, Carousel, Header } from '@/components'
 
 export const metadata = {
   title: 'Create Next App yeah',
@@ -14,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="it">    
       <body>  
-        <Header/> 
-        <Banner/>
-        <Carousel/>
+        <Header/>
         {children}
       </body>
     </html>

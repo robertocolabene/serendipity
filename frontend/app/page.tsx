@@ -4,8 +4,17 @@ import styles from './page.module.css'
 import CommApi from '@/core/comm-api'
 import { Suspense } from 'react'
 import Link from 'next/link'
+import { Metadata } from 'next'
+import * as components from '@/components'
 
 const inter = Inter({ subsets: ['latin'] })
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Home',
+    description: 'desc home'
+  };
+}
 
 async function getSeo() {
   let comm = new CommApi();
@@ -13,15 +22,25 @@ async function getSeo() {
 }
 
 export default async function Home() {
-
   const [seo] = await Promise.all([getSeo()]);
 
+  return (
+    <>
+      <components.Banner/>
+      <components.Carousel/>
+      <Prova seo={seo}/>
+    </>  
+  )
+}
+
+
+function Prova(props: any) {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
           <Suspense fallback={<div>Loading...</div>}>
-          Get Sstarted by {seo.test} asdasd {seo.asd} editing&nbsp;
+          Get Sstarted by {props.seo.test} asdasd {props.seo.asd} editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>
           </Suspense>
         </p>
