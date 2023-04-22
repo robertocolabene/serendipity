@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
-import CommApi from '@/core/comm-api'
 import { Suspense } from 'react'
 import Link from 'next/link'
 import { Metadata } from 'next'
@@ -16,13 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-async function getSeo() {
-  let comm = new CommApi();
-  return await comm.get('/test');
-}
-
 export default async function Home() {
-  const [seo] = await Promise.all([getSeo()]);
+  //const [seo] = await Promise.all([getSeo()]);
+  const seo = {};
 
   return (
     <>
