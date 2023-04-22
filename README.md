@@ -65,6 +65,7 @@ $ yarn run test:cov
 - dotenv
 - vscode-icons
 - material icon theme
+- tailwind css intellisense
 
 
 - pm2 start dist/main.js --name <application_name>
