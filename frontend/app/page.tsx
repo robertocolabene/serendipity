@@ -4,9 +4,8 @@ import styles from './page.module.css'
 import React, { Suspense } from 'react'
 import Link from 'next/link'
 import { Metadata } from 'next'
-import * as components from '@/components'
-
-React
+import { getBlock } from '@/components'
+import { NextRequest } from 'next/server'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,24 +16,28 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+async function blocks() {
+  
+}
+
 export default async function Home() {
   //const [seo] = await Promise.all([getSeo()]);
   const blocks = [
-    components['Banner'],
-    components['Carousel']
+    {
+      _uid: 1,
+      component: 'Banner'
+    },
+    {
+      _uid: 2,
+      component: 'Carousel'
+    }
   ];
+
+  const Test = blocks[0];
 
   return (
     <>  
-      {blocks.map((block,index) => 
-        <React.Fragment key={index}>
-          {block}
-        </React.Fragment>
-      )}
+      {blocks.map(block => getBlock(block))}
     </>  
   )
 }
-
-
-//<components.Banner/>
-//{/* @ts-expect-error Server Component */} <components.Carousel/>
