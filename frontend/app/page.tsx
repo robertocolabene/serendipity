@@ -1,8 +1,5 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
-import React, { Suspense } from 'react'
-import Link from 'next/link'
 import { Metadata } from 'next'
 import { getBlock } from '@/components'
 import { NextRequest } from 'next/server'

@@ -1,4 +1,4 @@
-import { Header } from '@/components'
+import { Footer, Header } from '@/components'
 import './globals.css'
 
 export const metadata = {
@@ -14,8 +14,10 @@ export default function RootLayout({
   return (
     <html lang="it">    
       <body>  
+        {/* @ts-expect-error Server Component */}
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   )

@@ -1,6 +1,6 @@
 'use client';
 import React, { Suspense } from 'react';
-import { PublicStore } from '@/core/store-api';
+import { PublicStore } from '@/api/store';
 
 export default class Paragrafo extends React.Component {
 

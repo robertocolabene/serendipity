@@ -2,11 +2,13 @@ import React from 'react'
 import Carousel from './carousel';
 import Banner from './banner';
 import Header from './header';
+import Footer from './footer';
 
 const Components = {
     Banner, 
     Carousel, 
-    Header 
+    Header,
+    Footer
 };
 
 const getBlock = (block) => {
@@ -25,5 +27,6 @@ export {
     Banner, 
     Carousel, 
     Header,
+    Footer,
     getBlock 
 } 

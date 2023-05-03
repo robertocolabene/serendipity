@@ -1,11 +1,14 @@
 class Api
 {	
-	constructor(api, ttl) {
+	api: string;
+	ttl: number;
+
+	constructor(api: string, ttl: number) {
 		this.api = api;
 		this.ttl = ttl;
 	}
 
-	async get(endpoint) {
+	async get(endpoint: string) {
 		const res = await fetch(this.api + endpoint, { 
 			//cache: 'no-cache',
 			next: { revalidate: this.ttl }
