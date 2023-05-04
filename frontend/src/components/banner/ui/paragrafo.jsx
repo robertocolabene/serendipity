@@ -7,6 +7,7 @@ export default class Paragrafo extends React.Component {
     async componentDidMount() {
         const data = await PublicStore.get('/test')
         console.log(data)
+        console.log(this.context)
     }
 
     render(){

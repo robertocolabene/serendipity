@@ -1,4 +1,5 @@
 import { Footer, Header } from '@/components'
+import Providers from '@/context'
 import './globals.css'
 
 export const metadata = {
@@ -14,10 +15,12 @@ export default function RootLayout({
   return (
     <html lang="it">    
       <body>  
-        {/* @ts-expect-error Server Component */}
-        <Header/>
-        {children}
-        <Footer/>
+        <Providers>
+          {/* @ts-expect-error Server Component */}
+          <Header/>
+          {children}
+          <Footer/>
+        </Providers>
       </body>
     </html>
   )
