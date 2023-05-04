@@ -1,4 +1,4 @@
-class Api
+export default class Api
 {	
 	api: string;
 	ttl: number;
@@ -19,11 +19,3 @@ class Api
 		return res.json();
 	}
 }
-
-const Store = new Api('http://127.0.0.1:3001',10);
-const PublicStore = new Api('http://127.0.0.1:3001',10);
-
-export {
-	Store as default,
-	PublicStore
-};

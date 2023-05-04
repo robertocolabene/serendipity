@@ -1,5 +1,5 @@
 //import { useEffect, useState } from "react";
-import Store from '@/api/store'
+import Store from '@/lib/store'
 
 async function getSeo() {  
     return await Store.get('/test');
