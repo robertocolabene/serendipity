@@ -1,22 +1,21 @@
 'use client';
-import React, { Suspense } from 'react';
-import { PublicStore } from '@/lib/store';
+import useFetch from '@/hooks/useFetch';
+import React, { Suspense, useEffect } from 'react';
 
-export default class Paragrafo extends React.Component {
+export default function Paragrafo(props) {
 
-    async componentDidMount() {
-        const data = await PublicStore.get('/test')
-        console.log(data)
-        console.log(this.context)
-    }
+    const { data, loading, error, refetch } = useFetch('/test');
 
-    render(){
-        return (
-            <>
-                <p className={this.props.styles.test}>
-                    Questo è la descrizione
-                </p>
-            </>     
-        );
-    }  
+    if(loading) return <h1>Loading...</h1>;
+
+    if(error) console.log(error);
+
+    return (
+        <>
+            <p className={props.styles.test}>
+                Questo è il paragrafo del banner {data?.test}
+            </p>
+            <button onClick={(e) => refetch()}>Refetch</button>
+        </>     
+    );
 }

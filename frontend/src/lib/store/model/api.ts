@@ -13,9 +13,7 @@ export default class Api
 			//cache: 'no-cache',
 			next: { revalidate: this.ttl }
 		});
-		if (!res.ok) {
-			throw new Error('Failed to fetch data');
-		}
-		return res.json();
+		if (!res.ok) throw new Error(`Failed to fetch data from Api: ${res.url} ${res.status} (${res.statusText})`);	
+		return res.json();	
 	}
 }
