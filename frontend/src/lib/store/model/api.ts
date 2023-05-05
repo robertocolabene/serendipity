@@ -1,3 +1,5 @@
+import ApiError from "../error/apiError";
+
 export default class Api
 {	
 	api: string;
@@ -13,7 +15,7 @@ export default class Api
 			//cache: 'no-cache',
 			next: { revalidate: this.ttl }
 		});
-		if (!res.ok) throw new Error(`Failed to fetch data from Api: ${res.url} ${res.status} (${res.statusText})`);	
+		if (!res.ok) throw new ApiError(res.statusText,res.status,res.url);	
 		return res.json();	
 	}
 }
