@@ -1,6 +1,9 @@
 import { Footer, Header } from '@/components'
 import Providers from '@/context'
 import './globals.css'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App yeah',
@@ -14,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="it">    
-      <body>  
+      <body className={inter.className}>  
         <Providers>
           {/* @ts-expect-error Server Component */}
           <Header/>
