@@ -19,11 +19,11 @@ export default function ThemeProvider({ children }: {
 
   const [darkTheme, setDarkTheme] = useLocalStorage('darkTheme',false);
 
-  const toggleTheme = () => {
+  const toggleDarkTheme = () => {
     setDarkTheme(prevDarkTheme => !prevDarkTheme)
   }
 
-  const context = { theme, darkTheme, toggleTheme }
+  const context = { theme, darkTheme, toggleDarkTheme }
 
   return (
     <ThemeContext.Provider value={context}>   
