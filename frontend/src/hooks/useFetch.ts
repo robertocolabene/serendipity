@@ -1,8 +1,6 @@
 import { PublicStore } from "@/lib/store";
 import { useEffect, useState } from "react";
 
-
-
 export default function useFetch(endpoint: string){
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
