@@ -1,5 +1,5 @@
 import { Footer, Header } from '@/components'
-import Providers from '@/context'
+import Providers from '@/context/providers'
 import './globals.css'
 import { Inter } from 'next/font/google'
 

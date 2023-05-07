@@ -1,19 +1,19 @@
 import { PublicStore } from "@/lib/store";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function useFetch(endpoint: string){
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    function handleCall(endpoint: string){
+    const handleCall = useCallback((endpoint: string) => {
         setLoading(true);
    
         PublicStore.get(endpoint)
         .then((response) => setData(response))
         .catch((e) => setError(e))
         .finally(() => setLoading(false))
-    }
+    },[])
 
     useEffect(() => {
 
@@ -21,9 +21,9 @@ export default function useFetch(endpoint: string){
 
     },[endpoint]);
 
-    const refetch = (newendpoint?: string) => {
+    const refetch = useCallback((newendpoint?: string) => {
         handleCall((newendpoint ? newendpoint : endpoint)); 
-    }
+    },[endpoint])
 
     return { data, loading, error, refetch };
 }

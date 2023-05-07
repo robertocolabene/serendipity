@@ -1,6 +1,6 @@
 'use client';
 
-import useLocalStorage from '@/hooks/useLocalStorage';
+import { useLocalStorage } from '@/hooks';
 import { createContext, useContext } from 'react';
 
 const ThemeContext = createContext({});
