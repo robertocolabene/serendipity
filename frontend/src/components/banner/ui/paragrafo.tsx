@@ -3,11 +3,16 @@ import { useTheme } from '@/context/theme';
 import { useFetch, useLocalStorage, useToggle } from '@/hooks'
 import React, { useRef } from 'react';
 
-export default function Paragrafo(props) {
+type Test = {
+    test: string,
+    asd: string
+}
 
-    const { theme , darkTheme, toggleDarkTheme } = useTheme()
+export default function Paragrafo(props: any) {
+
+    const { theme , darkTheme, toggleDarkTheme }: any = useTheme()
    
-    const { data, loading, error, refetch } = useFetch('/test');
+    const { data, loading, error, refetch } = useFetch<Test>('/test');
 
     const [ order, setOrder ] = useLocalStorage('order_banner','asc');
 

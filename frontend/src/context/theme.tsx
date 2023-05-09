@@ -3,7 +3,17 @@
 import { useLocalStorage } from '@/hooks';
 import { createContext, useContext } from 'react';
 
-const ThemeContext = createContext({});
+type Theme = {
+  template: string
+}
+
+type ThemeContext = {
+  theme: Theme, 
+  darkTheme: boolean, 
+  toggleDarkTheme: () => void 
+} | {}
+
+const ThemeContext = createContext<ThemeContext>({});
 
 export function useTheme() {
   return useContext(ThemeContext)
@@ -23,7 +33,7 @@ export default function ThemeProvider({ children }: {
     setDarkTheme(prevDarkTheme => !prevDarkTheme)
   }
 
-  const context = { theme, darkTheme, toggleDarkTheme }
+  const context: ThemeContext = { theme, darkTheme, toggleDarkTheme }
 
   return (
     <ThemeContext.Provider value={context}>   

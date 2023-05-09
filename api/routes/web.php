@@ -18,5 +18,5 @@ $router->get('[/]', function () use ($router) {
 });
 
 $router->get('/test[/]', function () use ($router) {
-    return json_encode(['test'=>date('Y-m-d H:i:s'),'asd'=>'not']);
+    return json_encode(['test'=>date('Y-m-d H:i:s'),'asd'=>'not','status'=>true]);
 });

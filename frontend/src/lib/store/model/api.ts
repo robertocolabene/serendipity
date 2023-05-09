@@ -1,5 +1,11 @@
 import ApiError from "../error/apiError";
 
+export type Response = {
+	status: boolean,
+	code?: number,
+	message?: string
+}
+
 export default class Api
 {	
 	api: string;
@@ -10,7 +16,7 @@ export default class Api
 		this.ttl = ttl;
 	}
 
-	async get(endpoint: string) {
+	async get<T>(endpoint: string): Promise<T & Response> {
 		const res = await fetch(this.api + endpoint, { 
 			//cache: 'no-cache',
 			next: { revalidate: this.ttl }
