@@ -20,4 +20,4 @@
     RewriteRule ^ index.php [QSA,L]
 </IfModule>
 
-AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript
+#AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript
